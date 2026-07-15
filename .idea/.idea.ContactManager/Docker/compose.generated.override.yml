@@ -1,0 +1,21 @@
+# This is a generated file. Not intended for manual editing.
+version: "3.8"
+services:
+  api:
+    build:
+      context: "C:\\Users\\Dryet\\RiderProjects\\Contact-Manager"
+      dockerfile: "ContactManager/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net10.0/ContactManager.dll"
+    environment:
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "contactmanager:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\Dryet\\RiderProjects\\Contact-Manager\\ContactManager:/app:rw"
+    - "C:\\Users\\Dryet\\RiderProjects\\Contact-Manager:/src:rw"
+    - "C:\\Users\\Dryet\\.nuget\\packages:/home/app/.nuget/packages"
+    working_dir: "/app"
