@@ -14,6 +14,13 @@ namespace ContactManager.Infrastructure.Persistence
             _context = context;
         }
 
+        public async Task<IEnumerable<Contact>> GetAllAsync(CancellationToken cancellationToken = default)
+        {
+            var query = "SELECT * FROM Contacts";
+            using var connection = _context.CreateConnection();
+            return await connection.QueryAsync<Contact>(new CommandDefinition(query, cancellationToken: cancellationToken));
+        }
+
         public async Task<IEnumerable<Contact>> GetContactsAsync(int pageNumber, int pageSize, string sortBy, bool ascending, CancellationToken cancellationToken = default)
         {
             

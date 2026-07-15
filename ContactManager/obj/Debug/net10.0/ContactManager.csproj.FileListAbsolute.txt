@@ -62,3 +62,5 @@ C:\Users\Dryet\RiderProjects\Contact-Manager\ContactManager\obj\Debug\net10.0\re
 C:\Users\Dryet\RiderProjects\Contact-Manager\ContactManager\obj\Debug\net10.0\ContactManager.pdb
 C:\Users\Dryet\RiderProjects\Contact-Manager\ContactManager\obj\Debug\net10.0\ContactManager.genruntimeconfig.cache
 C:\Users\Dryet\RiderProjects\Contact-Manager\ContactManager\obj\Debug\net10.0\ref\ContactManager.dll
+C:\Users\Dryet\RiderProjects\Contact-Manager\ContactManager\obj\Debug\net10.0\ContactManager.RazorAssemblyInfo.cache
+C:\Users\Dryet\RiderProjects\Contact-Manager\ContactManager\obj\Debug\net10.0\ContactManager.RazorAssemblyInfo.cs
