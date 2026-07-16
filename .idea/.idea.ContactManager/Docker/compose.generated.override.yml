@@ -11,6 +11,7 @@ services:
     - "dotnet"
     - "/app/bin/Debug/net10.0/ContactManager.dll"
     environment:
+      ASPNETCORE_STATICWEBASSETS: "/app/bin/Debug/net10.0/ContactManager.staticwebassets.runtime.CT.json"
       DOTNET_USE_POLLING_FILE_WATCHER: "true"
     image: "contactmanager:dev"
     ports: []

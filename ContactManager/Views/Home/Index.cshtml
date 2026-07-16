@@ -1,18 +1,21 @@
 ﻿@{
-    ViewData["Title"] = "Contact Manager";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Contact Manager</h1>
-
-<div style="margin-bottom: 20px; padding: 15px; border: 1px solid #ccc;">
-    <h3>Upload CSV</h3>
-    <form id="uploadForm" enctype="multipart/form-data">
-        <input type="file" id="csvFile" accept=".csv" required />
+<div class="container">
+    <h2>Upload Contacts</h2>
+    
+    <form id="uploadForm" method="post" enctype="multipart/form-data">
+        <input type="file" id="csvFile" name="file" accept=".csv" />
         <button type="submit">Upload</button>
     </form>
+    
     <div id="uploadMessage"></div>
-</div>
 
-<div id="contactsContainer">
-    @await Component.InvokeAsync("ContactList")
+    <hr />
+
+    <h2>Contacts List</h2>
+    <div id="contactsTableContainer">
+        @await Component.InvokeAsync("ContactList")
+    </div>
 </div>

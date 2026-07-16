@@ -8,7 +8,7 @@ namespace ContactManager.Domain.Entities
         
         public required string Name { get; set; }
         
-        public DateTime DateOfBirth { get; set; }
+        public DateTime? DateOfBirth { get; set; }
         
         public bool Married { get; set; }
         

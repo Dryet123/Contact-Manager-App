@@ -1,19 +1,20 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-data-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Contact Manager</title>
+    <title>Contact Manager</title>
 </head>
 <body>
-    @await Html.PartialAsync("_Header")
+@await Html.PartialAsync("_Header")
     
-    <main role="main">
-        @RenderBody()
-    </main>
+<main role="main">
+    @RenderBody()
+</main>
 
-    @await Html.PartialAsync("_Footer")
+@await Html.PartialAsync("_Footer")
 
-    @RenderSection("Scripts", required: false)
+<script src="~/js/site.js"></script>
+@RenderSection("Scripts", required: false)
 </body>
 </html>
