@@ -1,3 +1,4 @@
+﻿
 using ContactManager.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,8 +15,13 @@ namespace ContactManager.Presentation.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var contacts = await _contactRepository.GetAllAsync();
-            
+            var contacts = await _contactRepository.GetContactsAsync(
+                pageNumber: 1, 
+                pageSize: 10, 
+                sortBy: "Name", 
+                ascending: true, 
+                cancellationToken: CancellationToken.None);
+                
             return View(contacts);
         }
     }

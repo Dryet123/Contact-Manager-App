@@ -4,4 +4,15 @@
 
 <h1>Contact Manager</h1>
 
-@await Component.InvokeAsync("ContactList")
+<div style="margin-bottom: 20px; padding: 15px; border: 1px solid #ccc;">
+    <h3>Upload CSV</h3>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" id="csvFile" accept=".csv" required />
+        <button type="submit">Upload</button>
+    </form>
+    <div id="uploadMessage"></div>
+</div>
+
+<div id="contactsContainer">
+    @await Component.InvokeAsync("ContactList")
+</div>

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ContactManager.Domain.Entities.Contact>
+
+<table id="contactsTable" border="1" style="width: 100%; border-collapse: collapse;">
+    <thead>
+    <tr>
+        <th><a href="#" class="sort-link" data-sort="Name">Name</a></th>
+        <th><a href="#" class="sort-link" data-sort="Phone">Phone</a></th>
+        <th><a href="#" class="sort-link" data-sort="DateOfBirth">Date of Birth</a></th>
+        <th><a href="#" class="sort-link" data-sort="Married">Married</a></th>
+        <th><a href="#" class="sort-link" data-sort="Salary">Salary</a></th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @if (Model != null && Model.Any())
+    {
+        foreach (var contact in Model)
+        {
+            <tr data-id="@contact.Id">
+                <td class="editable" data-field="Name">@contact.Name</td>
+                <td class="editable" data-field="Phone">@contact.Phone</td>
+                <td class="editable" data-field="DateOfBirth">
+                    @contact.DateOfBirth.ToString("yyyy-MM-dd")
+                </td>
+                <td class="editable" data-field="Married">
+                    <input type="checkbox" disabled @(contact.Married ? "checked" : "") />
+                </td>
+                <td class="editable" data-field="Salary">@contact.Salary</td>
+                <td>
+                    <button class="edit-btn">Edit</button>
+                    <button class="delete-btn">Delete</button>
+                </td>
+            </tr>
+        }
+    }
+    else
+    {
+        <tr>
+            <td colspan="6" style="text-align: center;">No contacts found.</td>
+        </tr>
+    }
+    </tbody>
+</table>
